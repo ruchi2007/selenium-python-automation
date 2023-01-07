@@ -2,8 +2,6 @@ import pytest
 
 from pages.homePage import HomePage
 from pages.loginPage import LoginPage
-from selenium import webdriver
-import time
 
 from util import usercredential
 
@@ -11,7 +9,6 @@ from util import usercredential
 @pytest.mark.usefixtures('setup')
 class TestLogin:
     @pytest.mark.smoke
-
     def test_verify_user_should_login_successfully(self):
         driver = self.driver
         lp = LoginPage(driver)
@@ -19,8 +16,8 @@ class TestLogin:
         lp.enter_password(usercredential.password)
         lp.click_submit_btn()
         print("\n tc1..............>success")
-    @pytest.mark.smoke
 
+    @pytest.mark.smoke
     def test_verify_user_should_logout_successfully(self):
         driver = self.driver
         hp = HomePage(driver)
