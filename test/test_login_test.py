@@ -8,7 +8,6 @@ from util import usercredential
 
 @pytest.mark.usefixtures('setup')
 class TestLogin:
-    @pytest.mark.smoke
     def test_verify_user_should_login_successfully(self):
         driver = self.driver
         lp = LoginPage(driver)
@@ -17,14 +16,12 @@ class TestLogin:
         lp.click_submit_btn()
         print("\n tc1..............>success")
 
-    @pytest.mark.smoke
     def test_verify_user_should_logout_successfully(self):
         driver = self.driver
         hp = HomePage(driver)
         hp.click_logout_icon()
         print("\n tc2............>success")
 
-    @pytest.mark.regrassion
     def test_login_verify_error_message_for_invalid_credential(self):
         driver = self.driver
         lp = LoginPage(driver)
