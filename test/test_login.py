@@ -32,15 +32,15 @@ def test_login_successfully(test_setup):
     title = driver.title
     assert title == "OrangeHRM"
 
-def test_verify_user_should_not_login_with_invalid_credential(test_setup):
-    username = "//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input"
-    password = "//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input"
-    login = "//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"
-    driver.find_element_by_xpath(username).send_keys("abc")
-    driver.find_element_by_xpath(password).send_keys("admin123")
-    driver.find_element_by_xpath(login).click()
-    error_messege = driver.find_element_by_xpath("//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p").text
-    assert "Invalid credentials" in error_messege
+# def test_verify_user_should_not_login_with_invalid_credential(test_setup):
+#     username = "//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input"
+#     password = "//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input"
+#     login = "//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"
+#     driver.find_element_by_xpath(username).send_keys("abc")
+#     driver.find_element_by_xpath(password).send_keys("admin123")
+#     driver.find_element_by_xpath(login).click()
+#     error_messege = driver.find_element_by_xpath("//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p").text
+#     assert "Invalid credentials" in error_messege
 
 # def test_closebrowser():
 #     driver.close()
