@@ -9,7 +9,7 @@ from util import environment_url
 def setup(request):
     global driver
     driver = webdriver.Chrome(ChromeDriverManager().install())
-    driver.get(environment_url . qa_url)
+    driver.get(environment_url.qa_url)
     driver.implicitly_wait(1000)
     request.cls.driver = driver
 
